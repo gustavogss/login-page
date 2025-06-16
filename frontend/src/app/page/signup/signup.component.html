@@ -1,0 +1,45 @@
+<app-default-layout
+  title="Preencha o formulaŕio com seus dados"
+  primaryBtnText="Inscreva-se Agora"
+  secondaryBtnText="Login"
+  (submit)="submit()"
+  (navigate)="navigate()"
+  [disablePrimaryBtn]="!signupForm.valid"
+>
+  <form [formGroup]="signupForm">
+    <app-primary-input
+      formControlName="name"
+      inputName="name"
+      type="text"
+      label="Nome"
+      placeholder="Fulano de tal"
+    >
+      <i class="ph ph-user"></i>
+    </app-primary-input>
+    <app-primary-input
+      formControlName="email"
+      inputName="email"
+      type="email"
+      label="Email"
+      placeholder="email@email.com"
+    >
+      <i class="ph ph-envelope"></i>
+    </app-primary-input>
+    <app-primary-input
+      formControlName="password"
+      inputName="password"
+      type="password"
+      label="Senha"
+    >
+      <i class="ph ph-key"></i>
+    </app-primary-input>
+    <app-primary-input
+      formControlName="passwordComfirm"
+      inputName="passwordComfirm"
+      type="password"
+      label="Confirme sua senha"
+    >
+      <i class="ph ph-lock"></i>
+    </app-primary-input>
+  </form>
+</app-default-layout>
