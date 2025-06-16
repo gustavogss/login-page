@@ -6,6 +6,12 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 40px 20px;
+    height: auto;
+  }
 }
 
 section {
@@ -20,22 +26,40 @@ section {
   gap: 8px;
   background-color: $gray-bg;
   flex-grow: 1;
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    display: none; // remove o banner da visualização
+  }
 }
 
 .form-section {
-  flex-grow: 0.40;
+  flex-grow: 0.1;
   padding: 0 35px;
 
   img {
     margin-bottom: 30px;
+    max-width: 100%;
+    height: auto;
   }
 
-  h2{
+  h2 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 45px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+    font-size: 18px;
+    font-weight: 700;
   }
-  .btn-group{
+  }
+
+  .btn-group {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +67,7 @@ section {
     width: 100%;
     gap: 30px;
 
-    .divider{
+    .divider {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -54,14 +78,14 @@ section {
       width: 100%;
       text-transform: uppercase;
 
-      div{
+      div {
         flex-grow: 1;
         height: 2px;
         background-color: $gray-bg;
       }
     }
 
-    button{
+    button {
       width: 100%;
       border-radius: 8px;
       font-size: 16px;
@@ -70,24 +94,32 @@ section {
       background-color: transparent;
       padding: 12px 24px;
       cursor: pointer;
+      transition: all 0.5s;
 
-    &:disabled{
-      opacity: 0.75;
-    }
+      &:disabled {
+        opacity: 0.75;
+      }
 
-     &.btn-primary{
-      background-color: $primary-color;
-      color: white;
-      box-shadow:0px 8px 12px rgba(148.23004603385925, 64.33935597538948, 255, 0.20000000298023224);
-    }
-     &.btn-secondary {
-      border: 1px solid $primary-color;
-      color: $primary-color;
+      &.btn-primary {
+        background-color: $primary-color;
+        color: white;
+        box-shadow: 0px 8px 12px rgba(148, 64, 255, 0.2);
+      }
+
+      &.btn-secondary {
+        border: 1px solid $primary-color;
+        color: $primary-color;
+      }
+
+      &:hover {
+        background-color: $third-color;
+        color: $gray-bg;
+      }
     }
   }
-  button:hover{
-    background-color: $third-color;
-  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 20px;
   }
 }
-
