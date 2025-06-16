@@ -48,7 +48,7 @@ section {
       justify-content: center;
       align-items: center;
       font-size: 14px;
-      color: $gray-bg;
+      color: $gray-third-bg;
       font-weight: 400;
       gap: 20px;
       width: 100%;
@@ -62,14 +62,18 @@ section {
     }
 
     button{
-    width: 100%;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    background-color: transparent;
-    padding: 12px 24px;
-    cursor: pointer;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      background-color: transparent;
+      padding: 12px 24px;
+      cursor: pointer;
+
+    &:disabled{
+      opacity: 0.75;
+    }
 
      &.btn-primary{
       background-color: $primary-color;
@@ -80,6 +84,9 @@ section {
       border: 1px solid $primary-color;
       color: $primary-color;
     }
+  }
+  button:hover{
+    background-color: $third-color;
   }
   }
 }
